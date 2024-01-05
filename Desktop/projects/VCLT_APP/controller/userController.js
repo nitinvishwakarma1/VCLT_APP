@@ -73,27 +73,28 @@ export const registerroute = async (req, res) => {
 }
 
 export const verifyEmail = (req, res, next) => {
-    const { email } = req.body;
-    console.log(email);
-    async function isEmailValid(email) {
-        return emailValidator.validate(email);
-    }
-    (async () => {
-        const { valid, reason, validators } = await isEmailValid(email);
-        console.log("valid : ",valid);
-        if (valid) {
-            console.log('Email is valid');
-            next();
-        } else {
-            console.log('Email is not valid. Reason:', validators[reason].reason);
-            console.log(validators[reason].reason === "Timeout");
-            if(validators[reason].reason=="Timeout"){
-                isEmailValid(email);
-            }
-            res.render("pages/register", { msg: 'Email is not Valid' });
-        }
-    })();
-    // next();
+    // const { email } = req.body;
+    // console.log(email);
+    // async function isEmailValid(email) {
+    //     return emailValidator.validate(email);
+    // }
+    // (async () => {
+    //     const { valid, reason, validators } = await isEmailValid(email);
+    //     console.log("valid : ",valid);
+    //     if (valid) {
+    //         console.log('Email is valid');
+    //         next();
+    //     } else {
+    //         console.log('Email is not valid. Reason:', validators[reason].reason);
+    //         console.log(validators[reason].reason === "Timeout");
+    //         if(validators[reason].reason=="Timeout"){
+    //             isEmailValid(email);
+    //         }
+    //         res.render("pages/register", { msg: 'Email is not Valid' });
+    //     }
+    // })();
+    next();
+    
 }
 
 export const loginroute = async (req, res) => {
