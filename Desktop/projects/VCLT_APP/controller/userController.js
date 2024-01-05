@@ -16,12 +16,10 @@ let token;
 const maxAge = 86400 * 1000;
 
 const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 587,
-    secure: false,
-    auth: {
-        user: 'vishnitin51@gmail.com',
-        pass: 'nwey rgnh uorl mges'
+    service:'gmail',
+    auth:{
+        user : "vishnitin51@gmail.com",
+        pass : "zsdk fbgi wyuu lcjw"
     }
 });
 
